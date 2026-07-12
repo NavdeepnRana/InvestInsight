@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import ResearchForm from "./components/ResearchForm";
 import AnalysisProgress from "./components/AnalysisProgress";
 import ResultsPanel from "./components/ResultsPanel";
+import { API_ENDPOINTS } from "./config.js";
 import "./App.css";
 
 const EXAMPLE_COMPANIES = ["InsideIIM", "Apple", "Tesla", "Reliance Industries", "Infosys", "NVIDIA"];
@@ -48,7 +49,7 @@ export default function App() {
     const controller = new AbortController();
 
     try {
-      const res = await fetch("/api/research/stream", {
+      const res = await fetch(API_ENDPOINTS.researchStream, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ companyName }),
