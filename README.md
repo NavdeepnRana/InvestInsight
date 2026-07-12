@@ -2,6 +2,8 @@
 
 Take-home assignment for **InsideIIM × Altuni AI Labs** — an autonomous, real-time AI research agent that analyzes any public or private company across web, financial, and encyclopedic sources and delivers a structured, evidence-based recommendation (**Invest**, **Watch**, or **Pass**).
 
+### 🌐 Live Deployed Application: [http://13.55.135.145/](http://13.55.135.145/)
+
 ---
 
 ## Overview — What it does
@@ -249,3 +251,11 @@ Assignment2/
 
 ## License & Attribution
 Built for the **InsideIIM × Altuni AI Labs** intern take-home assignment. All code and prompts engineered for performance, reliability, and visual excellence.
+
+
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
