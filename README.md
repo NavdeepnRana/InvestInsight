@@ -253,6 +253,7 @@ Assignment2/
 Built for the **InsideIIM × Altuni AI Labs** intern take-home assignment. All code and prompts engineered for performance, reliability, and visual excellence.
 
 
+## Example runs -
 
 ![alt text](image.png)
 ![alt text](image-1.png)
