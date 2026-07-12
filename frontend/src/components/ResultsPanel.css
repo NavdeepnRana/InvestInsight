@@ -1,0 +1,647 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ── Base Card ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.card-header h3 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.card-emoji {
+  font-size: 1.1rem;
+}
+
+/* ── Company Profile Card ── */
+.card--profile {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.75rem;
+}
+
+.card-icon {
+  font-size: 2.25rem;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-light);
+  border-radius: 14px;
+}
+
+.card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.company-name {
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.profile-tags {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+}
+
+.profile-summary {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0.85rem;
+}
+
+/* ── Profile Meta (CEO, Founded, HQ) ── */
+.profile-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.meta-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+}
+
+.meta-chip-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.meta-chip-value {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ── Key Products ── */
+.key-products {
+  margin-bottom: 0.85rem;
+}
+
+.kp-label,
+.rb-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+.kp-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.kp-chip {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+}
+
+/* ── Revenue Breakdown ── */
+.revenue-breakdown {
+  margin-top: 0.25rem;
+}
+
+.rb-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.rb-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  background: var(--surface-2);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.rb-segment {
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+  min-width: 80px;
+}
+
+.rb-detail {
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ── Decision Card ── */
+.card--decision {
+  padding: 1.75rem;
+}
+
+.card--invest {
+  background: var(--invest-bg);
+  border-color: var(--invest-border);
+}
+
+.card--watch {
+  background: var(--watch-bg);
+  border-color: var(--watch-border);
+}
+
+.card--pass {
+  background: var(--pass-bg);
+  border-color: var(--pass-border);
+}
+
+.decision-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.decision-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.decision-icon {
+  font-size: 2.5rem;
+}
+
+.decision-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 0.15rem;
+}
+
+.decision-value {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.card--invest .decision-value {
+  color: var(--invest);
+}
+
+.card--watch .decision-value {
+  color: var(--watch);
+}
+
+.card--pass .decision-value {
+  color: var(--pass);
+}
+
+/* ── Confidence Ring ── */
+.decision-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.confidence-ring {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.confidence-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.confidence-bg {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 6;
+}
+
+.confidence-fill {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dasharray 1s ease;
+}
+
+.confidence-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.confidence-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* ── Financial Highlights (Mkt Cap, PE inline) ── */
+.fin-highlights {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: auto;
+}
+
+.fin-highlight-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  color: var(--text);
+}
+
+.fin-highlight-chip span {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── Grid Layout ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── Financial Health ── */
+.fin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.fin-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: var(--surface-2);
+  padding: 0.85rem 0.95rem;
+  border-radius: var(--radius-sm);
+}
+
+.fin-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.fin-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.fin-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.18rem 0.5rem;
+  border-radius: 5px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.fin-detail {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+.badge--green {
+  color: #15803d;
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.badge--yellow {
+  color: #a16207;
+  background: rgba(217, 119, 6, 0.1);
+}
+
+.badge--red {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.badge--neutral {
+  color: var(--muted);
+  background: var(--surface-2);
+}
+
+/* ── Market Position ── */
+.market-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.market-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+}
+
+.market-share-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+}
+
+.market-detail p {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 0.3rem;
+}
+
+.market-detail strong {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+/* ── Growth ── */
+.growth-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.growth-rating {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.growth--high {
+  color: #15803d;
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.growth--medium {
+  color: #a16207;
+  background: rgba(217, 119, 6, 0.1);
+}
+
+.growth--low {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.growth-reason {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* ── Catalysts ── */
+.catalysts {
+  margin-top: 0.25rem;
+}
+
+.catalysts-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.catalysts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0;
+}
+
+.catalysts-list li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.catalysts-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--invest);
+  font-weight: 700;
+}
+
+/* ── News ── */
+.news-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.news-list li {
+  position: relative;
+  padding-left: 1.15rem;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.news-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ── Risks ── */
+.risk-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.risk-pill {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #b91c1c;
+  background: rgba(220, 38, 38, 0.05);
+  border: 1px solid rgba(220, 38, 38, 0.15);
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-sm);
+  line-height: 1.55;
+}
+
+/* ── Reasoning ── */
+.card--reasoning {
+  border-color: var(--accent);
+  border-width: 1.5px;
+}
+
+.reasoning-list {
+  padding-left: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.reasoning-list li {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.reasoning-list li::marker {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ── Animations ── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .card--profile {
+    flex-direction: column;
+  }
+
+  .decision-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .decision-right {
+    align-self: center;
+  }
+
+  .fin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fin-highlights {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .profile-meta {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ai-investment-research-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI Investment Research Agent - InsideIIM × Altuni AI Labs take-home",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "start:backend": "npm start --prefix backend",
+    "build:frontend": "npm run build --prefix frontend"
+  }
+}

@@ -1,0 +1,365 @@
+/* ── Analysis Progress Page ── */
+.analysis-progress {
+  max-width: 680px;
+  margin: 0 auto;
+  animation: ap-fadeIn 0.4s ease;
+}
+
+/* ── Header ── */
+.ap-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ap-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #4f6ef7, #7c3aed);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+  animation: ap-badgePulse 2s ease-in-out infinite;
+}
+
+.ap-company {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.ap-subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── Progress Bar ── */
+.ap-progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ap-progress-track {
+  flex: 1;
+  height: 8px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.ap-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4f6ef7, #16a34a);
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.ap-progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: ap-shimmer 1.5s ease-in-out infinite;
+}
+
+.ap-progress-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+  min-width: 120px;
+  text-align: right;
+}
+
+/* ── Field Cards ── */
+.ap-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.ap-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: ap-fieldSlideIn 0.4s ease both;
+  box-shadow: var(--shadow-sm);
+}
+
+.ap-field--done {
+  border-color: rgba(22, 163, 74, 0.35);
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.03), rgba(22, 163, 74, 0.06));
+}
+
+.ap-field--failed {
+  border-color: rgba(234, 179, 8, 0.35);
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.03), rgba(234, 179, 8, 0.06));
+}
+
+.ap-field--loading {
+  border-color: rgba(79, 110, 247, 0.35);
+  background: linear-gradient(135deg, rgba(79, 110, 247, 0.02), rgba(79, 110, 247, 0.05));
+  box-shadow: 0 0 0 3px rgba(79, 110, 247, 0.06), var(--shadow-sm);
+}
+
+.ap-field-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.ap-field-icon {
+  font-size: 1.6rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-2);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.ap-field--loading .ap-field-icon {
+  background: var(--accent-light);
+}
+
+.ap-field--done .ap-field-icon {
+  background: rgba(22, 163, 74, 0.08);
+}
+
+.ap-field-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.ap-field-label {
+  font-size: 0.92rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.ap-field-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.ap-field-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+/* ── Status Icons ── */
+.status-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.status-done {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: white;
+  animation: ap-popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
+}
+
+.status-failed {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  color: white;
+  animation: ap-popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+}
+
+.status-loading {
+  background: transparent;
+  border: 2.5px solid var(--border);
+  border-top-color: var(--accent);
+  animation: ap-spin 0.7s linear infinite;
+  position: relative;
+}
+
+.status-waiting {
+  background: var(--surface-2);
+  border: 2px solid var(--border);
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  animation: ap-pulseRing 1.5s ease-out infinite;
+}
+
+/* ── Status text ── */
+.ap-field-status-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  min-width: 60px;
+  text-align: right;
+}
+
+.ap-status-text--done {
+  color: #16a34a;
+}
+
+.ap-status-text--failed {
+  color: #d97706;
+}
+
+.ap-status-text--loading {
+  color: var(--accent);
+}
+
+.ap-status-text--waiting {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+/* ── Bottom tip ── */
+.ap-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.ap-tip-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+/* ── Animations ── */
+@keyframes ap-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ap-fieldSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ap-popIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ap-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ap-pulseRing {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes ap-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes ap-badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(79, 110, 247, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(79, 110, 247, 0);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 540px) {
+  .ap-field {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .ap-field-right {
+    align-self: flex-end;
+  }
+
+  .ap-progress-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ap-progress-text {
+    text-align: center;
+    min-width: auto;
+  }
+}

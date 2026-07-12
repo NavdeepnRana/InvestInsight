@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f5f6fa;
+  --surface: #ffffff;
+  --surface-2: #f0f2f7;
+  --border: #e3e6ee;
+  --text: #1a1d2b;
+  --muted: #6b7489;
+  --accent: #4f6ef7;
+  --accent-light: #eef1fe;
+  --accent-glow: rgba(79, 110, 247, 0.12);
+  --invest: #16a34a;
+  --invest-bg: rgba(22, 163, 74, 0.07);
+  --invest-border: rgba(22, 163, 74, 0.2);
+  --pass: #dc2626;
+  --pass-bg: rgba(220, 38, 38, 0.06);
+  --pass-border: rgba(220, 38, 38, 0.2);
+  --watch: #d97706;
+  --watch-bg: rgba(217, 119, 6, 0.08);
+  --watch-border: rgba(217, 119, 6, 0.25);
+  --warning: #d97706;
+  --font: "Inter", system-ui, -apple-system, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --radius: 14px;
+  --radius-sm: 10px;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
